@@ -7,7 +7,7 @@ private:
     const sf::Color COLOR_ALIVE = sf::Color(233, 233, 233, 255);
     const sf::Color COLOR_DEAD = sf::Color(33, 33, 33, 255);
 
-    int size = 10;
+    int size = 15;
     bool alive = false;
     bool die_next_turn = false;
     bool live_next_turn = false;
