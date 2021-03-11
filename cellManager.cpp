@@ -8,12 +8,13 @@ private:
     const int MAX_CONNECTED = 3;
 
 public:
-    Cell cells[25][25];
-    const int GRID_WIDTH =25;
-    const int GRID_HEIGHT = 25;
-    const int GRID_SEPERATOR_SIZE = 3;
-    const int GRID_X_OFFSET = 25;
-    const int GRID_Y_OFFSET = 25;
+    static const int GRID_WIDTH = 152;
+    static const int GRID_HEIGHT = 152;
+    Cell cells[GRID_WIDTH][GRID_HEIGHT];
+
+    const int GRID_SEPERATOR_SIZE = 1;
+    const int GRID_X_OFFSET = 15;
+    const int GRID_Y_OFFSET = 15;
 
     void set_all_alive(bool status)
     {
@@ -27,14 +28,14 @@ public:
         }
     }
 
-    void render_cells(sf::RenderWindow &window)
+    void render_cells(sf::RenderWindow &window, sf::Color color)
     {
         for (int x = 0; x < GRID_WIDTH; x++)
         {
             for (int y = 0; y < GRID_HEIGHT; y++)
             {
                 window.draw(cells[x][y].render(x * (cells[x][y].get_size() + GRID_SEPERATOR_SIZE) + GRID_X_OFFSET,
-                                               y * (cells[x][y].get_size() + GRID_SEPERATOR_SIZE) + GRID_Y_OFFSET));
+                                               y * (cells[x][y].get_size() + GRID_SEPERATOR_SIZE) + GRID_Y_OFFSET, color));
             }
         }
     }
@@ -111,19 +112,6 @@ public:
                 int num_connected = left_connected + right_connected + up_connected + down_connected +
                                     diagonal_down_left_connected + diagonal_down_right_connected +
                                     diagonal_up_left_connected + diagonal_up_right_connected;
-                //std::cout << num_connected << std::endl;
-
-                if (x == 6 && y == 4) {
-                    std::cout << "l " << left_connected << std::endl;
-                    std::cout << "r " << right_connected << std::endl;
-                    std::cout << "u " << up_connected << std::endl;
-                    std::cout << "d " << down_connected << std::endl;
-
-                    std::cout << "d ul " << diagonal_up_left_connected << std::endl;
-                    std::cout << "d ur " << diagonal_up_right_connected << std::endl;
-                    std::cout << "d dl " << diagonal_down_left_connected << std::endl;
-                    std::cout << "d dr " << diagonal_down_right_connected << std::endl;
-                }
 
                 if (cells[x][y].is_alive())
                 {

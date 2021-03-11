@@ -1,0 +1,28 @@
+// ? Cube
+/*
+cell_manager.cells[5][5].set_alive(true);
+cell_manager.cells[6][6].set_alive(true);
+cell_manager.cells[5][6].set_alive(true);
+cell_manager.cells[6][5].set_alive(true);
+*/
+
+// ? Oscillator
+/*
+cell_manager.cells[5][5].set_alive(true);
+cell_manager.cells[6][5].set_alive(true);
+cell_manager.cells[7][5].set_alive(true);
+
+cell_manager.cells[4][6].set_alive(true);
+cell_manager.cells[5][6].set_alive(true);
+cell_manager.cells[6][6].set_alive(true);
+*/
+
+// ? Glider
+/*
+cell_manager.cells[5][5].set_alive(true);
+cell_manager.cells[6][5].set_alive(true);
+cell_manager.cells[7][5].set_alive(true);
+
+cell_manager.cells[7][4].set_alive(true);
+cell_manager.cells[6][3].set_alive(true);
+*/

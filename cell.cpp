@@ -4,10 +4,10 @@
 class Cell
 {
 private:
-    const sf::Color COLOR_ALIVE = sf::Color(233, 233, 233, 255);
+    const sf::Color COLOR_ALIVE = sf::Color(0, 245, 92, 255); 
     const sf::Color COLOR_DEAD = sf::Color(33, 33, 33, 255);
 
-    int size = 15;
+    int size = 4;
     bool alive = false;
     bool die_next_turn = false;
     bool live_next_turn = false;
@@ -43,11 +43,11 @@ public:
         return size;
     }
 
-    sf::RectangleShape render(int grid_x, int grid_y)
+    sf::RectangleShape render(int grid_x, int grid_y, sf::Color color)
     {
         shape.setSize(sf::Vector2f(size, size));
         if (alive)
-            shape.setFillColor(COLOR_ALIVE);
+            shape.setFillColor(color);
         else
             shape.setFillColor(COLOR_DEAD);
 

@@ -1,2 +1,2 @@
 g++ -c main.cpp
-g++ main.o -o life -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+g++ -Wl,-z,stack-size=8194304 main.o -o life -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
